@@ -140,7 +140,10 @@ const Slider = () => {
       <div
         className="container"
         ref={containerRef}
-        style={{ backgroundColor: "#9E982D" }}
+        style={{
+          backgroundColor: slides[0]?.color,
+          width: slides.length * 100 + "vw",
+        }}
       >
         {slides.map((slide) => {
           return (
@@ -148,7 +151,7 @@ const Slider = () => {
               <h1 className={active ? "active" : ""}>{slide.title}</h1>
               <img
                 className={active ? "active" : ""}
-                src={slide.img}
+                src={slide?.img}
                 alt={slide.title}
               />
             </div>
